@@ -1,78 +1,117 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Pixel Tracking Practice</title>
-<!-- Meta Pixel Code -->
-<script>
-!function(f,b,e,v,n,t,s)
-{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
-n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
-n.queue=[];t=b.createElement(e);t.async=!0;
-t.src=v;s=b.getElementsByTagName(e)[0];
-s.parentNode.insertBefore(t,s)}(window, document,'script',
-'https://connect.facebook.net/en_US/fbevents.js');
-fbq('init', '24427345723601641');
-fbq('track', 'PageView');
-</script>
-<noscript><img height="1" width="1" style="display:none"
-src="https://www.facebook.com/tr?id=24427345723601641&ev=PageView&noscript=1"
-/></noscript>
-<!-- End Meta Pixel Code -->
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background: linear-gradient(to right, #6a11cb, #2575fc);
-            color: white;
-            margin: 0;
-            padding: 0;
-        }
-        h1 {
-            margin-top: 10%;
-            font-size: 2.5rem;
-        }
-        p {
-            font-size: 1.2rem;
-            margin-bottom: 30px;
-        }
-        .btn {
-            background: white;
-            color: #2575fc;
-            border: none;
-            padding: 12px 25px;
-            margin: 10px;
-            border-radius: 5px;
-            font-size: 1rem;
-            cursor: pointer;
-            transition: 0.3s;
-            text-decoration: none;
-            display: inline-block;
-        }
-        .btn:hover {
-            background: #f1f1f1;
-        }
-        footer {
-            position: fixed;
-            bottom: 10px;
-            width: 100%;
-            font-size: 0.9rem;
-            opacity: 0.7;
-        }
-    </style>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Website</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background-color: #f5f6fa;
+      color: #333;
+    }
+    header {
+      background: linear-gradient(135deg, #4f46e5, #6d28d9);
+      color: white;
+      padding: 20px 0;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2em;
+    }
+    header p {
+      margin-top: 5px;
+      font-size: 1.2em;
+    }
+    main {
+      padding: 20px;
+      max-width: 900px;
+      margin: auto;
+    }
+    .hero {
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .hero button {
+      padding: 12px 25px;
+      background-color: #4f46e5;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+    .hero button:hover {
+      background-color: #4338ca;
+    }
+    .section {
+      background: white;
+      padding: 20px;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
+    }
+    footer {
+      background: #111827;
+      color: white;
+      text-align: center;
+      padding: 15px 0;
+      margin-top: 40px;
+    }
+  </style>
 
-    <!-- Place your Pixel Tracking code here -->
-    <!-- Example: Facebook Pixel or Google Tag -->
+  <!-- Meta Pixel Code -->
+  <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', 'YOUR_PIXEL_ID_HERE'); 
+    fbq('track', 'PageView');
+  </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID_HERE&ev=PageView&noscript=1"/>
+  </noscript>
+  <!-- End Meta Pixel Code -->
 </head>
 <body>
-    <h1>Welcome to My Dummy Website</h1>
-    <p>This site is for Pixel Tracking practice only.</p>
+  <header>
+    <h1>Welcome to My Website</h1>
+    <p>Your go-to place for awesome content</p>
+  </header>
 
-    <a href="contact.html" class="btn">Contact Us</a>
-    <a href="learn-more.html" class="btn">Learn More</a>
+  <main>
+    <section class="hero">
+      <h2>We Create Amazing Experiences</h2>
+      <p>Learn, explore, and enjoy our services.</p>
+      <button id="contactBtn" onclick="fbq('track', 'Contact')">Contact Us</button>
+    </section>
 
-    <footer>© 2025 Dummy Website</footer>
+    <section class="section">
+      <h3>About Us</h3>
+      <p>We are a passionate team dedicated to creating high-quality digital experiences for our visitors. Explore our work and get in touch with us for collaborations.</p>
+    </section>
+
+    <section class="section">
+      <h3>Our Services</h3>
+      <ul>
+        <li>Web Design & Development</li>
+        <li>Digital Marketing</li>
+        <li>SEO Optimization</li>
+        <li>Content Creation</li>
+      </ul>
+    </section>
+  </main>
+
+  <footer>
+    &copy; 2025 My Website. All rights reserved.
+  </footer>
 </body>
 </html>
