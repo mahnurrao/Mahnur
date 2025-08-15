@@ -1,22 +1,73 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-  <title>Product Page</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shop Lawn Dresses</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#f7f7f7; }
+    header { background:#8B0000; color:white; padding:1em; text-align:center; }
+    nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
+    .products { display:grid; grid-template-columns:repeat(auto-fit, minmax(250px, 1fr)); gap:20px; padding:20px; }
+    .product { background:white; border-radius:8px; padding:10px; text-align:center; box-shadow:0 0 5px rgba(0,0,0,0.1); }
+    .product img { width:100%; height:auto; border-radius:8px; }
+    .product h3 { margin:10px 0; }
+    .product button { background:#8B0000; color:white; padding:10px 15px; border:none; cursor:pointer; border-radius:5px; }
+    .product button:hover { background:#a00000; }
+    footer { text-align:center; padding:1em; background:#333; color:white; margin-top:20px; }
+  </style>
+
+  <!-- Meta Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
-    n.queue=[];t=b.createElement(e); t.async=!0;
-    t.src=v; s=b.getElementsByTagName(e)[0];
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_PIXEL_ID'); 
+    fbq('init', '24427345723601641'); 
     fbq('track', 'ViewContent');
   </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=ViewContent&noscript=1"/>
+  </noscript>
 </head>
 <body>
-  <h1>Awesome Product</h1>
-  <button onclick="fbq('track', 'AddToCart'); window.location='thankyou.html';">Add to Cart</button>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="product.html">Shop</a>
+      <a href="thankyou.html">Thank You</a>
+    </nav>
+  </header>
+
+  <div class="products">
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1616401784043-36c1f3a3ee3d" alt="Lawn Dress 1">
+      <h3>Summer Lawn Design 1</h3>
+      <p>PKR 2,500</p>
+      <button onclick="buyProduct()">Buy Now</button>
+    </div>
+    <div class="product">
+      <img src="https://images.unsplash.com/photo-1607344645866-009c7e06b8aa" alt="Lawn Dress 2">
+      <h3>Elegant Embroidered Lawn</h3>
+      <p>PKR 3,200</p>
+      <button onclick="buyProduct()">Buy Now</button>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Elegant Lawn Collection
+  </footer>
+
+  <script>
+    function buyProduct(){
+      fbq('track', 'Purchase', {currency: "PKR", value: 2500});
+      window.location.href = "thankyou.html";
+    }
+  </script>
 </body>
 </html>

@@ -1,21 +1,54 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Thank You</title>
+  <style>
+    body { font-family: Arial, sans-serif; margin:0; padding:0; background:#fff5f5; text-align:center; }
+    header { background:#8B0000; color:white; padding:1em; }
+    nav a { color:white; margin:0 15px; text-decoration:none; font-weight:bold; }
+    .thankyou { padding:50px 20px; }
+    .thankyou h1 { font-size:2.5em; color:#8B0000; }
+    .thankyou p { font-size:1.2em; }
+    footer { text-align:center; padding:1em; background:#333; color:white; margin-top:20px; }
+  </style>
+
+  <!-- Meta Pixel Code -->
   <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
     n.callMethod.apply(n,arguments):n.queue.push(arguments)};
-    if(!f._fbq)f._fbq=n; n.push=n; n.loaded=!0; n.version='2.0';
-    n.queue=[];t=b.createElement(e); t.async=!0;
-    t.src=v; s=b.getElementsByTagName(e)[0];
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
     s.parentNode.insertBefore(t,s)}(window, document,'script',
     'https://connect.facebook.net/en_US/fbevents.js');
-    fbq('init', 'YOUR_PIXEL_ID'); 
-    fbq('track', 'Purchase', {value: 20.00, currency: 'USD'});
+    fbq('init', '24427345723601641'); 
+    fbq('track', 'PurchaseComplete');
   </script>
+  <noscript>
+    <img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=YOUR_PIXEL_ID&ev=PurchaseComplete&noscript=1"/>
+  </noscript>
 </head>
 <body>
-  <h1>Thank You for Your Purchase!</h1>
+  <header>
+    <nav>
+      <a href="index.html">Home</a>
+      <a href="product.html">Shop</a>
+      <a href="thankyou.html">Thank You</a>
+    </nav>
+  </header>
+
+  <div class="thankyou">
+    <h1>Thank You for Your Purchase!</h1>
+    <p>Your order has been received and will be delivered soon.</p>
+    <a href="index.html" style="display:inline-block; margin-top:20px; padding:10px 20px; background:#8B0000; color:white; text-decoration:none; border-radius:5px;">Back to Home</a>
+  </div>
+
+  <footer>
+    &copy; 2025 Elegant Lawn Collection
+  </footer>
 </body>
 </html>
